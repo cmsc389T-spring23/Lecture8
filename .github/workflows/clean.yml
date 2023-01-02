@@ -14,4 +14,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: rm -rf Lecture4
+          script: |
+            unalias rm
+            rm -rf Lecture4

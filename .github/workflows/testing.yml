@@ -24,7 +24,7 @@ jobs:
       - name: Compile Java Code
         run: |
           javac -cp ".:junit-4.10.jar" *.java
-          java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestAdd.java
+          java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestAdd
 
   testSub:
     runs-on: ubuntu-latest
@@ -36,4 +36,4 @@ jobs:
       - name: Compile Java Code
         run: |
           javac -cp ".:junit-4.10.jar" *.java
-          java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestSub.java
+          java -cp ".:junit-4.10.jar" org.junit.runner.JUnitCore TestSub

@@ -1,3 +1,2 @@
-# Lecture4
+# Lecture6
 
-This is a test of the deploy workflow!

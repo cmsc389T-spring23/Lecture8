@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  calculator:
+    build:
+      context: Calculator
+      dockerfile: Dockerfile
+    image: calculator
+    container_name: calculator
+    restart: unless-stopped
+
+  hello-world:
+    image: hello-world
+    container_name: hello-world
+    restart: unless-stopped
+
+  file-writer:
+    build:
+      context: FileWriter 
+      dockerfile: Dockerfile
+    image: file-writer
+    container_name: file-writer
+    volumes:
+      - file-writer-volume:/home/myuser/app
+    restart: unless-stopped
+
+  static-webpage:
+    build:
+      context: StaticWebpage 
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    image: static-webpage
+    container_name: static-webpage
+    restart: unless-stopped
+
+volumes:
+  file-writer-volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/sagarsaxena/Desktop/Programming/UMD/cmsc38XT/fall22/demos/Lecture8/Part_Three/FileWriter
+      o: bind

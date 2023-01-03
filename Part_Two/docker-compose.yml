@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  calculator:
+    build:
+      context: Calculator
+      dockerfile: Dockerfile
+    image: calculator
+    container_name: calculator
+    restart: unless-stopped
+
+  hello-world:
+    image: hello-world
+    container_name: hello-world
+    restart: unless-stopped
